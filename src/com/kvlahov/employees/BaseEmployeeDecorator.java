@@ -1,5 +1,6 @@
 package com.kvlahov.employees;
 
+import com.kvlahov.Train;
 import com.kvlahov.vehicles.Vehicle;
 
 public abstract class BaseEmployeeDecorator implements Employee {
@@ -20,7 +21,7 @@ public abstract class BaseEmployeeDecorator implements Employee {
     }
 
     @Override
-    public void parkVehicle(Vehicle vehicle) {
-        decoratedEmployee.parkVehicle(vehicle);
+    public void parkVehicle(Vehicle vehicle, Train train) {
+        decoratedEmployee.parkVehicle(vehicle, train);
     }
 }

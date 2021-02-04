@@ -1,13 +1,15 @@
 package com.kvlahov.employees;
 
 import com.kvlahov.RevenueCalculator;
+import com.kvlahov.Train;
 import com.kvlahov.vehicles.Vehicle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BaseEmployee implements Employee {
     private double commissionPercentage;
-    private List<Vehicle> parkedVehicles;
+    private List<Vehicle> parkedVehicles = new ArrayList<>();
 
     public BaseEmployee(double commissionPercentage) {
         this.commissionPercentage = commissionPercentage;
@@ -19,8 +21,9 @@ public class BaseEmployee implements Employee {
     }
 
     @Override
-    public void parkVehicle(Vehicle vehicle) {
+    public void parkVehicle(Vehicle vehicle, Train train) {
         parkedVehicles.add(vehicle);
+        train.addVehicle(vehicle);
     }
 
     @Override

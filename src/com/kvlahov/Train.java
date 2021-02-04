@@ -32,7 +32,7 @@ public class Train implements RevenueCalculator {
     }
 
     public boolean addVehicle(Vehicle vehicle) {
-        if (vehicle.getType() != acceptableVehicleType) return false;
+        if (vehicle.getType() != acceptableVehicleType || occupied == maxCapacity) return false;
 
         vehicles.add(vehicle);
         occupied++;
